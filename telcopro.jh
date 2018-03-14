@@ -1,0 +1,442 @@
+
+
+entity AppUser {
+	username String,
+    password String
+}
+entity AppRole {
+	rolename String
+}
+
+entity Intervenant {
+	imageFile String,
+    nom String,
+    prenom String,
+    fonction String,
+    cni String,
+    coordoneesBancaire String,
+    dateNais Date,
+    nationalite String,
+    numeroVisa String,
+    dateExpVisa String,
+    etatCivil String,
+    enMission Boolean,
+    teamLeader Boolean,
+    responsable Boolean
+}
+
+entity Adresse {
+	pays String,
+    region String,
+    villeResidence String,
+    quartier String,
+    codePostal String,
+    adresse String,
+    adresseComp String,
+    telephone String,
+    telephone2 String,
+    email String,
+    site String
+}
+
+//enum TypeIntervenant {
+//    PARTICULIER, EMPLOYE, MO
+//}
+
+entity TypeIntervenant {
+    libele String,
+	description String
+}
+
+entity Contrat {
+	structSalarial String,
+    avantage String,
+    duree ZonedDateTime,
+    horaireDebut String,
+    horaireFin String,
+    dureeEssaie String,
+    niveauPro String,
+    datePayePlanifie String,
+    permisDeTravail String,
+    qualification String,
+    commentaire String
+}
+entity FichePaie {
+	cnps String,
+    dateDebut String,
+    dateFin String,
+    nbHeure Double,
+    prime Double,
+    salaireBase String,
+    salaireBrute String
+}
+
+
+entity Sanction {
+	description String,
+    libele String,
+    indicePerf Double,
+    cout String
+}
+
+
+entity Poste {
+	description String,
+    nom String
+}
+entity Departement {
+	nom String,
+    description String
+}
+
+entity Equipement {
+	libele String,
+    description String,
+    duree String,
+    etat Boolean,
+    pathphoto String,
+    prixUnitaire Double,
+    quantite Double,
+    prixttc Double,
+    dateAchat ZonedDateTime
+}
+
+entity CommandeEquipement {
+	libele String,
+    description String,
+    prixtttc Double,
+    quantite Double,
+    dateCommande ZonedDateTime,
+    dateLivraison ZonedDateTime
+   
+}
+
+entity LigneCommande {
+	libele String,
+    description String,
+    prixunitaire Double,
+    quantite Double,
+    prixttc Double,
+    tva Double
+   
+}
+entity Evenement {
+	dateEvent ZonedDateTime,
+    ctoaprouve Boolean,
+    descripton String,
+    libele String,
+    mdaprouve Boolean,
+    pmaprouve Boolean,
+    status String,
+    type String
+}
+
+entity CashOut {
+	amount Double,
+    ctoaprouve Boolean,
+    mdaprouve Boolean,
+    date ZonedDateTime,
+    description String,
+    chiffreComptable String,
+    poaprouve Boolean
+}
+entity Filiale {
+	nom String,
+    description String
+}
+
+entity Entreprise {
+	logopath String,
+    nic String,
+    rccm String,
+    slogan String,
+    raisonSocial String,
+    type String
+}
+
+entity TypeEntreprise {
+	libele String,
+    description String
+}
+
+entity Equipe {
+	nom String,
+    description String
+}
+
+entity Evaluation {
+	libele String,
+    commentaire String,
+    resultat Double,
+    date ZonedDateTime
+}
+entity Kpi {
+	description String,
+    commentaire String,
+    libele String,
+    pourcentage Double,
+    taux Double
+}
+
+entity Site {
+	antheigth Double,
+    bsc String,
+    codeSite String,
+    constructeur String 
+    hsn String,
+    lac String,
+    latitude Double,
+    longitude Double,
+    nom String,
+    rac String,
+    typeAntenne String
+}
+
+entity InfoComSite {
+	libele String,
+    description String
+}
+
+entity LieuUtile {
+	latitude Double,
+    description String,
+    libele String,
+    telephone String,
+    telephone2 String,
+    type String
+}
+
+entity Job {
+	name String,
+    description String,
+    prixttc Double,
+    prixUnitaire Double,
+    quantite Double, 
+    tva Double,
+    unite String
+}
+entity Activite {
+	libele String,
+    description String,
+    prixtttc Double,
+    quantite Double,
+    tva Double,
+    unit String
+}
+
+entity Projet {
+	libele String,
+    description String
+}
+
+entity WorkOrder {
+	libele String,
+    description String,
+    prixtttc Double,
+    quantite Double,
+    scope String,
+    startDate ZonedDateTime,
+    status Boolean,
+    tva Double,
+    unit String
+}
+entity PurchaseOrder {
+	libele String,
+    description String,
+    prixtttc Double,
+    quantite Double,
+    scope String,
+    startDate ZonedDateTime,
+    status Boolean,
+    tva Double,
+    unit String
+}
+
+entity Item {
+	reference String,
+    description String,
+    prixtttc Double,
+    quantite Double,
+    prixUnitaire String,
+    tva Double,
+    unit String
+}
+
+entity ItemLpo {
+	reference String,
+    description String,
+    prixtttc Double,
+    quantite Double,
+    prixUnitaire String,
+    tva Double,
+    unit String
+}
+
+entity ProjectPlan {
+	libele String,
+    description String,
+    prixtttc Double,
+    quantite Double
+}
+
+entity LPurchaseOrder {
+	libele String,
+    reference String,
+    prixtttc Double,
+    scope String,
+    startDate ZonedDateTime,
+    status Boolean,
+    tva Double,
+    unit String,
+    scopeDateLine String
+}
+
+
+entity PaiementLpo {
+	libele String,
+    description String,
+    date ZonedDateTime,
+    commentaire String,
+   pourcentage Double,
+   tranche String,
+   status Boolean
+}
+entity TypeFrais {
+	libele String,
+    description String
+}
+
+entity Frais {
+	libele String,
+    commentaire String,
+    coutTotal Double,
+    date ZonedDateTime,
+    status Boolean,
+    nombreJour Double
+}
+
+entity Document {
+	libele String,
+    name String,
+    path String,
+    startDate ZonedDateTime,
+    status Boolean
+}
+entity Snag {
+	libele String,
+    description String,
+    date ZonedDateTime,
+    dateCorection ZonedDateTime,
+    status Boolean
+}
+entity Status {
+	code String,
+    description String,
+    value Boolean
+}
+
+entity Planning {
+	libele String,
+    description String,
+    dateDebut ZonedDateTime,
+    duree Double,
+    typeDeProjet String,
+    status Boolean,
+    ctoaprouve Boolean,
+    mdaprouve Boolean,
+    mpaprouve Boolean
+}
+
+entity Tache {
+	libele String,
+    description String,
+    comentaire String,
+    dateDebut ZonedDateTime,
+    dateFin ZonedDateTime,
+    status Boolean
+}
+
+entity DocReport {
+	libele String,
+    description String,
+    comentaire String,
+    date ZonedDateTime,
+    status Boolean,
+    path String
+}
+entity Capture {
+	libele String,
+    description String,
+    path String
+}
+
+entity Facture {
+	libele String,
+    description String,
+    reference String,
+    prixttc Double,
+    tva Double,
+    etat Boolean  
+}
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+	Intervenant{intervenantadresse} to Adresse,
+    Intervenant {intervenantappuser} to AppUser,
+    Entreprise {entrepriseadresse} to Adresse,
+    ProjectPlan {projectplanlpurchasseorder} to LPurchaseOrder,
+    LigneCommande{lignecommandeequipement} to Equipement
+}
+relationship OneToMany {
+    Entreprise {intervantpontrat} to Filiale,
+    Entreprise {entrepriseprojectplan} to ProjectPlan,
+    Filiale {filialedepartement} to Departement,
+    Departement{departementtypeintervenant} to Poste,
+    Poste {posteContrat} to Contrat, 
+    Intervenant {intervantcontrat} to Contrat,
+    Intervenant {intervantsanction} to Sanction,
+    Intervenant {intervantfichepaie} to FichePaie,
+    Intervenant {intervantevenement} to Evenement,
+    AppUser {intervantapprole} to AppRole,
+    Intervenant {intervantcashout} to CashOut,
+    Intervenant {intervantequipe} to Equipe,
+    Equipe {intervantevaluation} to Evaluation,
+   	Evaluation {evaluationkpi} to Kpi,
+    Projet{projectworkorder} to WorkOrder,
+    PurchaseOrder{purchaseorderprojectplan} to ProjectPlan,
+    PurchaseOrder {purchaseorderworkorder} to WorkOrder,
+    PurchaseOrder {purchaseorderitem} to Item,
+    PurchaseOrder {purchaseorderfacture} to Facture,
+    TypeIntervenant{typeintervenantintervenant} to Intervenant,
+    TypeEntreprise {typeentrepriseentreprise} to Entreprise,
+	Site {siteinfocomsite} to InfoComSite,
+    Site {siteworkorder} to WorkOrder,
+    WorkOrder {workorderactivite} to Activite,
+    Activite {activitejob} to Job,
+    Planning {planningtache} to Tache,
+    Planning {planningsnag} to Snag,
+    Planning {planningdocument} to Document,
+    Planning {planningprijectplan} to ProjectPlan,
+    Planning {planningfrais} to Frais,
+    Planning {planningstatus} to Status,
+    TypeFrais {typefraisfrais} to Frais,
+    DocReport {docreporttache} to Tache,
+    DocReport {docreportcapture} to Capture,
+    LPurchaseOrder{lpopaimentlpo} to PaiementLpo,
+    LPurchaseOrder{lpoitemlpo} to ItemLpo,
+    CommandeEquipement {comdlignecomd} to LigneCommande,
+    Intervenant {intervenantcomd} to CommandeEquipement
+}
+
+
+relationship ManyToMany {
+ 	Equipe {intervantprojectplan} to ProjectPlan,
+    InfoComSite{infocomplsitelieuutile} to LieuUtile
+    
+}
+
+dto * with mapstruct
+// Set Myservice options to all except few
+service all with serviceImpl 
+// Set an angular suffix
+//angularSuffix * with my
